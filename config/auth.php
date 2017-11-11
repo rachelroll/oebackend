@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => 'Forone\Admin',
         ],
 
         // 'users' => [
@@ -103,5 +103,6 @@ return [
             'expire' => 60,
         ],
     ],
+
 
 ];
