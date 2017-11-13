@@ -26,9 +26,6 @@ return [
             'icon'       => 'mdi-toggle-radio-button-on',
             'permission' => 'admin',
             'children'   => [
-                '滚动图'  => [
-                    'uri' => 'carousel',
-                ],
                 '角色管理'  => [
                     'uri' => 'roles',
                 ],
@@ -37,6 +34,9 @@ return [
                 ],
                 '管理员管理' => [
                     'uri' => 'admins',
+                ],
+                '轮播图管理' => [
+                    'uri' => 'carousel',
                 ]
             ],
         ],

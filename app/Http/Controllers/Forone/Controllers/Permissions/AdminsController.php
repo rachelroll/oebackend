@@ -32,7 +32,16 @@ class AdminsController extends BaseController {
                 ['创建时间', 'created_at'],
                 ['操作', 'buttons', function ($data) {
                     $buttons = [
-                        ['编辑']
+                        ['编辑'],
+                        ['查看'],
+                        [
+                            'name' => '查看快速的减肥上课',
+                            'uri'=>route('admin.admins.show',['id'=>$data->id]),
+                            //'uri'=>url('admin/admins/'),
+                            'method' => 'GET',
+                            //'id'=>$data->id,
+                            'class'=>'btn-dark'
+                        ]
                     ];
                     if (!$data->hasRole(config('defender.superuser_role', 'superuser'))) {
                         array_push($buttons, ['分配角色', '#modal']);

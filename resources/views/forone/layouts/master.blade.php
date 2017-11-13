@@ -1,4 +1,4 @@
-@extends('forone::layouts.base')
+@extends('forone.layouts.base')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/forone/components/datetimepicker-master/jquery.datetimepicker.css') }}">

@@ -6,8 +6,6 @@
  * Email: smartydroid@gmail.com
  */
 
-
-
 Route::get('/', function () {
     return redirect()->route('admin.admins.index');
 });
@@ -22,21 +20,17 @@ Route::group(['middleware'=>['web']],function (){
 
 
 //admin
-Route::group(['prefix' => 'admin', 'middleware' => ['web','auth', 'permission:admin']], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:admin']], function () {
 
     Route::group(['namespace' => '\Forone\Controllers\Permissions'], function () {
         Route::resource('roles', 'RolesController');
         Route::resource('permissions', 'PermissionsController');
-
         Route::resource('admins', 'AdminsController');
         Route::post('roles/assign-permission', ['as' => 'admin.roles.assign-permission', 'uses' => 'RolesController@assignPermission']);
         Route::post('admins/assign-role', ['as' => 'admin.roles.assign-role', 'uses' => 'AdminsController@assignRole']);
     });
+    Route::resource('carousel', 'Carousel\CarouselController');
 
-    Route::group(['namespace' => '\Forone\Controllers\Carousel'], function () {
-        Route::resource('carousel', 'CarouselController');
-    });
 });
-
 
 //upload

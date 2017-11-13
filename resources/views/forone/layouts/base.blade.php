@@ -105,7 +105,7 @@
 <script>
     $(function(){
 
-        $(document).on('blur', 'input, textarea', function (e) {
+        $(document).on('blur', 'input, textarea', function () {
             $(this).val() ? $(this).addClass('has-value') : $(this).removeClass('has-value');
         });
 
