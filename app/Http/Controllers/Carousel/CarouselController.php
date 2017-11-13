@@ -19,6 +19,8 @@ class CarouselController extends BaseController
         parent::__construct('carousel','轮播图');
     }
 
+
+
     public function index()
     {
         $results = [
@@ -32,9 +34,15 @@ class CarouselController extends BaseController
                         ['编辑'],
                         ['查看'],
                         [
-                            'uri'=>route('admin.carousel.d=-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------该i  ]
-        ];
+                            'uri' => route('admin.carousel.delete', [$data->id]),
+                        ]
+                    ];
+                }],
+                ],
+            ];
+
         $paginate = Carousel::orderBy('created_at', 'desc')->paginate();
+
         $results['items'] = $paginate;
 
         return $this->view('carousel.index', compact('results'));
