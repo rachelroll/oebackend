@@ -31,10 +31,8 @@ class CarouselController extends BaseController
                     $buttons = [
                         ['编辑'],
                         ['查看'],
-                    ];
-                    return $buttons;
-                }]
-            ]
+                        [
+                            'uri'=>route('admin.carousel.d=-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------该i  ]
         ];
         $paginate = Carousel::orderBy('created_at', 'desc')->paginate();
         $results['items'] = $paginate;
@@ -87,6 +85,17 @@ class CarouselController extends BaseController
         $data = Carousel::findOrFail($id);
         if ($data) {
             return $this->view('carousel.show', compact('data'));
+        }else{
+            return $this->redirectWithError('数据未找到');
+        }
+    }
+
+    public function destroy($id)
+    {
+        $data = Carousel::findOrFail($id);
+        if ($data) {
+            $data->delete();
+            return back();
         }else{
             return $this->redirectWithError('数据未找到');
         }
