@@ -30,6 +30,7 @@ Route::group(['middleware'=>['web']],function (){
         Route::post('admins/assign-role', ['as' => 'admin.roles.assign-role', 'uses' => 'AdminsController@assignRole']);
     });
     Route::resource('carousel', 'Carousel\CarouselController');
+    Route::resource('product', 'Product\ProductController');
 
 });
 
