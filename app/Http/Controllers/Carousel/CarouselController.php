@@ -4,12 +4,7 @@ namespace App\Http\Controllers\Carousel;
 
 use App\Carousel;
 use App\Http\Controllers\Forone\Controllers\BaseController;
-use Forone\Requests\CreateAdminRequest;
-use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class CarouselController extends BaseController
@@ -61,7 +56,7 @@ class CarouselController extends BaseController
 
     public function store(Request $request)
     {
-
+dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ], [

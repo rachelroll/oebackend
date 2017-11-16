@@ -47,10 +47,10 @@ return [
 
     'qiniu'                       => [
 
-        'host'       => env('QINIU_HOST', 'http://7xlntj.com2.z0.glb.qiniucdn.com/'), //your qiniu host url
-        'access_key' => env('QINIU_AK', '7uuXy55ekyLfIw9gwI2Jr4Oin_9qHIQQfXi4ijL1'), //for test
-        'secret_key' => env('QINIU_SK', 'FX8P2NE_iE2TR0pwMkK1f3ZErGqGlsmjffCOIZUq'), //for test
-        'bucket'     => env('QINIU_BT', 'poly')
+        'host'       => env('QINIU_HOST', 'http://ozgti7vh2.bkt.clouddn.com/'), //your qiniu host url
+        'access_key' => env('QINIU_AK', 'QmVOjLPdaEujy9AT3crbZNkcgz5QjVZH3Bl5b-nE'), //for test
+        'secret_key' => env('QINIU_SK', 'nQCmIDEZp_F3QNpIK9JMWsHErHuYnhEWETxU6SD-'), //for test
+        'bucket'     => env('QINIU_BT', 'oe360')
     ],
 
     'oss'                       => [
