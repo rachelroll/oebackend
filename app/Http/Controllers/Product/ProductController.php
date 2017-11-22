@@ -94,7 +94,7 @@ class ProductController extends BaseController
 
     public function show($id)
     {
-        $data = Product::findOrFail($id);
+        $data = Product::find($id);
         if ($data) {
             return $this->view('product.show', compact('data'));
         }else{

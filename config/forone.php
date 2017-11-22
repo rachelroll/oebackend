@@ -10,7 +10,7 @@ return [
     'disable_routes' => true, //禁用自带routes，默认启用
     'auth' => [
         'administrator_table'      => 'admins',
-        'administrator_auth_controller' => 'Forone\Controllers\Auth\AuthController'
+        'administrator_auth_controller' => 'Auth\AuthController'
     ],
     'site_config'                 => [
         'site_name'   => 'OE360',

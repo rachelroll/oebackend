@@ -3,15 +3,20 @@
 namespace App\Http\Controllers\Carousel;
 
 use App\Carousel;
-use App\Http\Controllers\Forone\Controllers\BaseController;
+use Forone\Controllers\BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CarouselController extends BaseController
 {
+    const URI = 'carousel';
+    const NAME = '轮播图';
+
     function __construct()
     {
         parent::__construct('carousel','轮播图');
+        view()->share('page_name', self::NAME);
+        view()->share('uri', self::URI);
     }
 
 
@@ -51,7 +56,7 @@ class CarouselController extends BaseController
 
     public function create()
     {
-        return $this->view('carousel.create');
+        return $this->view(self::URI . '.create');
     }
 
     public function store(Request $request)

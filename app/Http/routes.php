@@ -14,13 +14,13 @@ Route::group(['middleware'=>['web']],function (){
     Route::controllers([
         'admin/auth' => config('forone.auth.administrator_auth_controller', 'Forone\Controllers\Auth\AuthController'),
     ]);
-    Route::get('/admin/qiniu/upload-token', ['as'=>'admin.qiniu.upload-token', 'uses'=>'Forone\Controllers\Upload\QiniuController@token']);
+    Route::get('/admin/qiniu/upload-token', ['as'=>'admin.qiniu.upload-token', 'uses'=>'Upload\QiniuController@token']);
 
 });
 
 
 //admin
-    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:admin']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:admin']], function () {
 
     Route::group(['namespace' => '\Forone\Controllers\Permissions'], function () {
         Route::resource('roles', 'RolesController');
@@ -29,9 +29,15 @@ Route::group(['middleware'=>['web']],function (){
         Route::post('roles/assign-permission', ['as' => 'admin.roles.assign-permission', 'uses' => 'RolesController@assignPermission']);
         Route::post('admins/assign-role', ['as' => 'admin.roles.assign-role', 'uses' => 'AdminsController@assignRole']);
     });
-    Route::resource('carousel', 'Carousel\CarouselController');
+
     Route::resource('product', 'Product\ProductController');
 
 });
+Route::group(['prefix'=>'admin'], function () {
+    Route::group(['namespace'=>'Carousel'], function () {
+        Route::resource('carousel','CarouselController');
+    });
+});
+
 
 //upload

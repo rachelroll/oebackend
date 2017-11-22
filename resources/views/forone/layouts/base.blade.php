@@ -24,14 +24,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/forone/components/humane/themes/original.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('vendor/forone/components/remodal/dist/remodal.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/forone/components/remodal/dist/remodal-default-theme.css') }}">
-    <link href="{{asset('vendor/forone/components/selectize/selectize.default.css')}}" rel="stylesheet">
+
     <script src="{{ asset('vendor/forone/libs/jquery/jquery/dist/jquery.js') }}"></script>
-    <script src="{{ asset('vendor/forone/components/selectize/selectize.min.js') }}"></script>
-    {{--Add fileViewer--}}
-    <link rel="stylesheet" href="{{ asset('vendor/forone/styles/Test-Photo.css') }}" type="text/css" />
-    <script src="{{ asset('vendor/forone/scripts/jquery.mousewheel.min.js') }}"></script>
-    <script src="{{ asset('vendor/forone/scripts/Test-Photo.js') }}"></script>
-    @yield('head')
     <style>
         input {
             font-size: 16px;
@@ -105,7 +99,7 @@
 <script>
     $(function(){
 
-        $(document).on('blur', 'input, textarea', function () {
+        $(document).on('blur', 'input, textarea', function (e) {
             $(this).val() ? $(this).addClass('has-value') : $(this).removeClass('has-value');
         });
 
@@ -114,9 +108,9 @@
 
 @if (count($errors) > 0)
     <script>
-    @foreach ($errors->all() as $error)
-    humane.log('{{ $error }}');
-    @endforeach
+        @foreach ($errors->all() as $error)
+        humane.log('{{ $error }}');
+        @endforeach
     </script>
 @endif
 

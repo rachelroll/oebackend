@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "forone/administrator": "5.2.x-dev"
+        "forone/administrator": "5.2.x-dev",
+        "predis/predis": "^2.0@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

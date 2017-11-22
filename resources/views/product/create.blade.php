@@ -9,7 +9,7 @@
     @else
         {!! Form::open(['url'=>'admin/'.$uri,'class'=>'form-horizontal']) !!}
     @endif
-    @include('product.form')
+    @include($uri.'.form')
     {!! Form::panel_end('保存') !!}
     {!! Form::close() !!}
 
